@@ -69,3 +69,4 @@ def get_current_user(token:str=Depends(oauth2_scheme)):
 @app.get("/dashboard")
 def dashboard(user:str=Depends(get_current_user)):
     return{"message":f"welcome{user},you are autherized"}
+

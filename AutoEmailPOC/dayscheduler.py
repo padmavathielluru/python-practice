@@ -19,7 +19,4 @@ def schedule_day_email(
         args=[to_email,subject,body]
     )
    
-
-
-
 #logic for sheduling an email at one time like on that particular date,for suppose any friend birthday like that 

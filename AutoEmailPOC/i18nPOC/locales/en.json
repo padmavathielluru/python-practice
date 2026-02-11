@@ -1,0 +1,5 @@
+{
+    "greeting":"Hello-good Morning",
+    "welcome":"Welcome to FastAPI",
+    "login_success": "Login Successful"
+}

@@ -1,0 +1,8 @@
+{
+    "_ThisIsComment":"according to JSON it can only change language of the values but not the key's language ",
+    "greeting": "नमस्ते - शुभ प्रभात",
+    "welcome": "FastAPI में आपका स्वागत है",
+    "login_success": "लॉगिन सफल"
+
+}
+

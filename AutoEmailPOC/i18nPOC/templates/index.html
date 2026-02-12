@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Translator</title>
+</head>
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
+
+<h1>🌍 Noor Mini google </h1>
+
+<form action="/translate" method="post">
+    <input type="text" name="text" placeholder="Enter text here" required>
+    <br><br>
+
+    <select name="lang">
+        <option value="hi">Hindi</option>
+        <option value="te">Telugu</option>
+        <option value="ur">Urdu</option>
+        <option value="ta">Tamil</option>
+        <option value="kn">Kannada</option>
+
+    </select>
+    <br><br>
+
+    <button type="submit">Translate</button>
+</form>
+
+{% if result %}
+    <h2>Result:</h2>
+    <p>{{ result }}</p>
+{% endif %}
+
+</body>
+</html>

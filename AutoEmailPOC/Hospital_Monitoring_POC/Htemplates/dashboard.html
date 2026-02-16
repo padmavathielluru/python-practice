@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hospital Monitoring Dashboard</title>
+</head>
+<body>
+    <h2>Patient Monitoring Dashboard</h2>
+    <table border="1">
+        <tr>
+            <th>Patient ID</th>
+            <th>Heart Rate</th>
+            <th>SpO2</th>
+            <th>Temperature</th>
+            <th>Status</th>
+            <th>Time</th>
+        </tr>
+
+        {% for v in vitals %}
+        <tr>
+            <td>{{ v.patient_id }}</td>
+            <td>{{ v.heart_rate }}</td>
+            <td>{{ v.spo2 }}</td>
+            <td>{{ v.temperature }}</td>
+            <td>{{ v.status }}</td>
+            <td>{{ v.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

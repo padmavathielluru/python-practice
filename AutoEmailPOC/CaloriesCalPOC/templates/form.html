@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calories Calculator</title>
+</head>
+<body>
+    <h2>Calories & BMI Calculator</h2>
+    <form method="post" action="/calculate">
+        Age: <input type="number" name="age" required><br><br>
+        Weight (kg): <input type="number" name="weight" required><br><br>
+        Height (cm): <input type="number" name="height" required><br><br>
+
+        Gender:
+        <select name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select><br><br>
+
+        Activity:
+        <select name="activity">
+            <option value="1.2">Sedentary</option>
+            <option value="1.375">Light Exercise</option>
+            <option value="1.55">Moderate</option>
+            <option value="1.725">Active</option>
+            <option value="1.9">Very Active</option>
+        </select><br><br>
+
+        <button type="submit">Calculate</button>
+    </form>
+</body>
+</html>

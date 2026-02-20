@@ -1,4 +1,28 @@
 
+from fastapi import FastAPI
+from routes import router
+
+app=FastAPI()
+
+app.include_router(router)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 #simple code  for POC practice
 from fastapi import FastAPI,Form
 from fastapi.responses import HTMLResponse
@@ -32,3 +56,5 @@ def calculate(age:int=Form(...),weight:float=Form(...),height:float=Form(...),ge
     else:
         bmr=(10*weight)+(6.25*height)-161
     return f"<h3>Your Daily calories Requirement is:{round(bmr,2)}kcal</h3>"
+
+'''

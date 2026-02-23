@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Role Based Chat POC</title>
+</head>
+<body>
+
+<h2>Role Based Chat</h2>
+
+<label>Role:</label>
+<select id="role">
+    <option value="student">Student</option>
+    <option value="mentor">Mentor</option>
+    <option value="admin">Admin</option>
+</select>
+
+<label>User ID:</label>
+<input type="text" id="user_id" placeholder="Enter user id">
+
+<button onclick="connect()">Connect</button>
+
+<hr>
+
+<div id="chatSection" style="display:none;">
+    <h3>Send Message</h3>
+
+    <label>Target Role:</label>
+    <input type="text" id="target_role" placeholder="mentor">
+
+    <label>Target User:</label>
+    <input type="text" id="target_user" placeholder="m1">
+
+    <br><br>
+
+    <input type="text" id="message" placeholder="Type message">
+    <button onclick="sendMessage()">Send</button>
+
+    <hr>
+
+    <h3>Messages:</h3>
+    <div id="messages"></div>
+</div>
+
+<script>
+    let socket;
+
+    function connect() {
+        const role = document.getElementById("role").value;
+        const user_id = document.getElementById("user_id").value;
+
+        socket = new WebSocket(`ws://127.0.0.1:8000/ws/${role}/${user_id}`);
+
+        socket.onopen = function() {
+            document.getElementById("chatSection").style.display = "block";
+            alert("Connected as " + role);
+        };
+
+        socket.onmessage = function(event) {
+            const msgDiv = document.getElementById("messages");
+            msgDiv.innerHTML += "<p>" + event.data + "</p>";
+        };
+
+        socket.onclose = function() {
+            alert("Disconnected");
+        };
+    }
+
+    function sendMessage() {
+        const targetRole = document.getElementById("target_role").value;
+        const targetUser = document.getElementById("target_user").value;
+        const message = document.getElementById("message").value;
+
+        const formattedMessage = `${targetRole}:${targetUser}:${message}`;
+        socket.send(formattedMessage);
+    }
+</script>
+
+</body>
+</html>

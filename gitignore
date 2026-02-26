@@ -44,3 +44,19 @@ htmlcov/
 # OS files
 .DS_Store
 Thumbs.db
+
+# env files
+.env
+../.env
+
+# python cache
+__pycache__/
+*.pyc
+
+# local database
+test.db
+
+# other projects / nested repos
+python-practice/
+SqlalchemyPOC/
+
